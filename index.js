@@ -6,7 +6,7 @@ import * as flags from './src';
 const Flag = props => {
   const flag = flags[props.type][`icons${props.size}`][props.code];
   const unknownFlag = flags[props.type][`icons${props.size}`]['unknown'];
-
+  if (!flag) return null;
   return (
     <Image
       source={flag || unknownFlag}
