@@ -11,6 +11,7 @@ const Flag = props => {
     <Image
       source={flag || unknownFlag}
       style={[{ width: props.size, height: props.size }, props.style]}
+      onPress={props.onFlagPress}
     />
   );
 };
@@ -18,11 +19,13 @@ const Flag = props => {
 Flag.propTypes = {
   size: PropTypes.number,
   type: PropTypes.string,
+  onFlagPress: PropTypes.func,
 };
 
 Flag.defaultProps = {
   size: 64,
   type: "shiny",
+  onFlagPress: () => {},
 };
 
 export default Flag;
